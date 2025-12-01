@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Password Protected Book Page</title>
+<style>
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background: #f5f5f5;
+overflow: hidden;
+}
+
+
+/* CENTERED PASSWORD SCREEN */
+#password-screen {
+position: fixed;
+top: 0; left: 0;
+width: 100%; height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+background: #ffffff;
+}
+
+
+#password-screen input {
+padding: 12px 20px;
+border: 1px solid #ccc;
+border-radius: 8px;
+font-size: 16px;
+outline: none;
+}
+
+
+#password-screen button {
+margin-top: 10px;
+padding: 10px 20px;
+border: none;
+border-radius: 8px;
+background: #333;
+color: #fff;
+font-size: 16px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+
+#password-screen button:hover {
+background: #555;
+}
+
+
+#hint {
+margin-top: 15px;
+font-size: 14px;
+color: #777;
+}
+
+
+/* MAIN BOOK PAGE */
+#book-page {
+display: none;
+height: 100vh;
+width: 100vw;
+overflow: hidden;
+}
+
+
+#container {
+display: flex;
+height: 100vh;
+}
+
+#sidebar {
+width: 250px;
+height: 100%;
+background: #222;
+color: #fff;
+padding: 20px;
+box-sizing: border-box;
+overflow-y: auto;
+}
+
+#sidebar h2 {
+margin-top: 0;
+color: #fff;
+}
+
+#sidebar ul {
+list-style: none;
+padding: 0;
+}
+
+#sidebar li {
+padding: 10px 0;
+cursor: pointer;
+border-bottom: 1px solid #444;
+transition: 0.3s;
+}
+
+#sidebar li:hover {
+background: #333;
+padding-left: 10px;
+}
+
+#content {
+flex: 1;
+padding: 20px;
+overflow-y: auto;
+background: #fff;
+}
+
+.chapter {
+margin-bottom: 40px;
+}
+
+.chapter h2 {
+color: #333;
+border-bottom: 2px solid #333;
+padding-bottom: 10px;
+}
+
+.chapter p {
+line-height: 1.6;
+text-align: justify;
+}
+</style>
+</head>
+<body>
+<div id="password-screen">
+<h2>Enter Password</h2>
+<input type="password" id="password-input" placeholder="Enter password" />
+<button onclick="checkPassword()">Submit</button>
+<div id="hint">Hint: The password is 'secret123'</div>
+</div>
+
+<div id="book-page">
+<div id="container">
+<div id="sidebar">
+<h2>Index</h2>
+<ul>
+<li onclick="scrollToChapter('ch1')">Chapter 1</li>
+<li onclick="scrollToChapter('ch2')">Chapter 2</li>
+<li onclick="scrollToChapter('ch3')">Chapter 3</li>
+</ul>
+</div>
+
+<div id="content">
+<div class="chapter" id="ch1">
+<h2>Please read this . Because i can not </h2>
+<p>
+i know tujhe mere se baat nhi krni and but mereko krni h kyuki merese nhi rha jaa rha , yaar why are you not thinking about me . I tried every possoble thing to do ki bas ek baar baat kr le tu mere se but tune sab deny kr di , ek mahine k around ho gya and ek bhi din aisa nhi gya jisme tu mujhe lagataar yaad na aayi ho, jaag rha hun to teri baate yaad aa rhi h , raat ho rhi h to yaad aata h terese khta tha ki raat ka time to humara h , sapne tere aa rhe h , and i can't do anything.about this haar cheej teri yaad dila rhi and tu h hi nhi mere paas.</p>
+</div>
+
+<div class="chapter" id="ch2">
+<h2>Meri halat</h2>
+<p>
+Main completly to nhi kh skta tere upar kya beeti hogi un kuch dino but tu andaza bhi nhi lga skti main kiss cheej se gujra hun till now. 
+First of all to tera aisa jana hi mere liye tha ki ab kya rha pura emotionally toot chuka tha , akash ko pta tha usko batate batate do baar ro pada , then hospital me admit ho gya health wise bhi lage hue and mummy k samne bhi emotional ho gya and vo puchti rhi kya hua kuch nhi hoga unhe kaise batata kya hua h , then yha aana tha phir teri yaad aa rhi ki updates deta tha usko by the way mereko pta tha ki main blocked hu but maine messages kare the about flight and landing but main balki roj messages krta tha dawai time se nhi le rha tha ut tujhe messages time se kr rha tha subah dopahar shaam.abhi bhi dimaag me har time tere kahyal chalte rhte h kaam se jaise hi ek second k liye hta tu hi aati h . Phone to chalane ka mann bhi nhi krta tu thi to sab acha lgat tha purpose tha social media ka just to be in contact with you.
+Tu gussa bhi ho rhi hogi ki kyu try kare jaaa rhe h ye mujhe isse baat nhi krni and i don't wanted to include anyone its just ki mere paas koi option hi nhi tha and the last jab tune sandhya se block krwa diya and all uss din aisa lga ki there is nothing left jo main ab kr skta hun at least main usse itna puch to leta ki tu theek h but ab to kuch nhi , main majak nhi kr rha agle do din tak mere haat paair kaapte rhe thande pade rhe yaha saath k sab pareshan ho gye the ki iski halat khaarab na hi jaye and sab kh rhe the itna mat soch . Jab se aaya hun everyone was like ki kya hua tujhe ghar se aa kr kaisa ho gya na has rha na bol rha aise hi shant rhta h .
+</p>
+</div>
+
+<div class="chapter" id="ch3">
+<h2>Why </h2>
+<p>
+Yaar aisa kyu ho rha , ye kyu zaruri hain just think about me once and soch  what i told you jab ghat pr baithe the tujhe pta h mere liye vo memorable kyu tha kyu mere ko vo best time lga tha kyu at that time i told you ki meri life se kabhi mat jana meri halat bohot kahrrab ho jayegi and you said ki kahi nhi jaa rhi main and at time i feel ki mujhe sab mil gya.
+tu humesha khti thi jab bhi future ki baat aati thi ki ishant tere behaviour pr depend krta h and main khta tha fir to koi dikkat nhi h but this does not feel to be a reason now phir kya baat hui mtlb jisko tu khti thi ki tu mujhe meri family k close le gya tujhe kaisa lga ki vo hi tujhe unse door le jayega why? in those 2 years maine kab tujhe aisa feel kra diya ki main teri baat nhi samjhunga kyu tujhe lga ki ye nhi samjhega isse baat hi nhi krti hu har jagah se block kr deti hu sab se krwa deti hun ? Why , not confroning is the option you choose with the person you love? Why didn't you think about us? Why didn't you even tried to contact me?Why didn't you even replied to my efforts? Itna bura hun kya main mujhe ye bta de itna bekar impression h kya mera ?
+</p>
+</div>
+
+<div class="chapter" id="ch3">
+<h2> What hurts ..</h2>
+<p>
+Tujhe pta h when you said na aisa aisaa ho gya hai all i was thiink of ki tere upar kya beet rhi hogi , teri halat kaisi hogi and what hurts is not talking to me is the only option you choose, tune cheeje solve krna bhi ek option nhi choose kiya , tune ye bhi nhi choose  kiya ki isse ek baar baat kr k isko sab samjha deti hun
+what hurts ki tune mere efforts ko kuch mana hi nhi all i want is ek baar baat kr le and we will sort this out we will find a solution to this
+what hurts ki tune kisi or se call pick karai and cut kr di sacchi batau that incident mujhe bohot bura lga i was like ki pehli baat to isne kisi or se call pich kyu karwaya and why that person cuts the call directly without even listening to my side what i wanted to say . It hurts ki mere main itna neeche ho gya tere liye 
+bass mainn yhi nhi samjh paa rha agar tu mere se ek baar baat kr le or mujhe sab samjha de to kya chala jayega 
+</p>
+</div>
+
+<div class="chapter" id="ch3">
+<h2>Me</h2>
+<p>
+i just wanted to know what you feel now , pta aisa feel hota h roj ki teri life me main problem tha so you just cut off from that problem and sab theek h 
+Yaar nidhi mujhe bol to ki ishant lets just wait kuch time k liye phir baat krte h ya kya scene h abhi jaise kiya h aisa to mt kr itne to bura nhi hun main , maine to mandir me har baar family me tera naam liya . kya tu abhi dono taraf ka naam leti h prayer me ? kya abhi bhi mere liye payer krti h ?
+
+Yaar please ek baar sahi se baat krle and jo bhi problem h mere se discuss kr le mere andar problem h just tell me , tujhe mere saath koi or problem h just tell me.
+Agar tune yha tak padh liya h and you wanted me in your life you wanted us and ek baar tune mujhe pyaar ka vasta diya tha ki tu mere se pyaar krta h to meri situation smaajh aaj main de rha hun tu mere krti thi or krti h to merese baat kr le.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+const correctPassword = "secret123"; // Change your password here
+
+function checkPassword() {
+const entered = document.getElementById("password-input").value;
+if (entered === correctPassword) {
+document.getElementById("password-screen").style.display = "none";
+document.getElementById("book-page").style.display = "block";
+} else {
+alert("Incorrect password. Try again.");
+}
+}
+
+
+function scrollToChapter(id) {
+const section = document.getElementById(id);
+section.scrollIntoView({ behavior: "smooth" });
+}
+</script>
+</body>
+</html>
